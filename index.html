@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Mohamed Halith – UI/UX Designer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0a0a0a;--fg:#fff;--mut:#d0d0d0;--card:#141414;--line:#2e2e2e;--r:#e10600;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);color-scheme:dark}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:calc(76px + env(safe-area-inset-top,0px))}
+body{margin:0;background:var(--bg);color:var(--fg);font:400 17px/1.65 'Figtree',system-ui,sans-serif;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--bg);z-index:30}
+a{color:inherit}::selection{background:var(--r);color:#fff}
+:focus-visible{outline:3px solid #fff;outline-offset:3px;border-radius:6px}
+.w{width:min(1120px,100% - 40px);margin:0 auto}
+#net{position:fixed;inset:0;z-index:-1;pointer-events:none}
+#pg{position:fixed;left:0;right:0;top:env(safe-area-inset-top,0px);height:4px;background:var(--r);transform-origin:0 50%;transform:scaleX(0);z-index:40}
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:35;background:rgba(10,10,10,.78);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+nav .w{display:flex;align-items:center;gap:28px;height:66px}
+.lg{font:800 20px 'Syne',sans-serif;text-decoration:none;margin-right:auto;display:flex;align-items:center;gap:10px}
+.lg i{width:30px;height:30px;border-radius:8px;background:var(--r);display:grid;place-items:center;font:800 15px 'Syne',sans-serif;font-style:normal;color:#fff}
+nav a.l{text-decoration:none;font-weight:600;font-size:15px;position:relative;padding:4px 0}
+nav a.l::after{content:"";position:absolute;left:0;right:0;bottom:-2px;height:2px;background:var(--r);transform:scaleX(0);transform-origin:0 50%;transition:transform .3s}
+nav a.l:hover::after,nav a.l.on::after{transform:scaleX(1)}
+section{padding:96px 0;position:relative}
+h1,h2,h3{margin:0;font-family:'Syne',sans-serif;line-height:1.08}
+h2{font-size:clamp(32px,4.8vw,54px);font-weight:800;letter-spacing:-.02em;margin-bottom:14px}
+h2::after{content:"";display:block;width:0;height:5px;border-radius:3px;background:var(--r);margin-top:14px;transition:width .9s .25s cubic-bezier(.2,.8,.2,1)}
+.in h2::after,h2.in::after{width:76px}
+.sub{color:var(--mut);max-width:58ch;margin:0 0 44px;font-size:18px}
+.hero{min-height:calc(100svh - 66px);display:flex;align-items:center;overflow:hidden;position:relative;padding:40px 0 90px}
+.gl{position:absolute;left:0;top:0;width:560px;height:560px;margin:-280px 0 0 -280px;border-radius:50%;background:var(--r);filter:blur(130px);opacity:.4;translate:var(--gx,62vw) var(--gy,35vh);transition:translate 1.4s cubic-bezier(.2,.8,.2,1);animation:pl 5s ease-in-out infinite alternate}
+@keyframes pl{to{opacity:.25;scale:1.15}}
+.hero .w{position:relative;z-index:1}
+h1{font-weight:700;font-size:clamp(26px,6.9vw,88px);line-height:1.1;letter-spacing:-.025em;white-space:nowrap}
+.ln{display:block;overflow:hidden;padding-bottom:.08em}
+.ch{display:inline-block;animation:ch .95s cubic-bezier(.2,.8,.2,1) both;animation-delay:calc(var(--k)*60ms + .2s)}
+@keyframes ch{from{transform:translateY(110%) rotate(6deg)}}
+.ds{margin:22px 0 0;font-size:15px;letter-spacing:.04em;color:var(--mut);display:flex;align-items:center;gap:14px;animation:fd 1s 1.4s both}
+.ds::before{content:"";width:46px;height:3px;background:var(--r);animation:gw 1s 1.4s both}
+@keyframes fd{from{opacity:0;transform:translateY(10px)}}@keyframes gw{from{width:0}}
+.sc{position:absolute;left:50%;bottom:26px;margin-left:-1px;width:2px;height:54px;background:linear-gradient(var(--fg),transparent);opacity:.7;animation:sc 2s ease-in-out infinite;transform-origin:top}
+@keyframes sc{0%{transform:scaleY(0)}60%{transform:scaleY(1);opacity:.7}100%{opacity:0}}
+.mq{background:var(--r);color:#fff;overflow:hidden;transform:rotate(-1.2deg);margin:0 -10px}.mq div{display:flex;width:max-content;animation:run 32s linear infinite}
+.mq span{font:700 22px 'Syne',sans-serif;padding:16px 26px;white-space:nowrap}.mq span::after{content:"";display:inline-block;width:9px;height:9px;margin-left:52px;border-radius:50%;background:#fff}
+@keyframes run{to{transform:translateX(-50%)}}
+.ab{display:grid;grid-template-columns:1.1fr .9fr;gap:52px;align-items:start}
+.ab p{color:var(--mut);font-size:19px;margin:0 0 16px}.ab p b{color:#fff}
+.ab ul{list-style:none;margin:0;padding:0;display:grid;gap:12px}
+.ab li{background:var(--card);border:1px solid var(--line);border-left:5px solid var(--r);border-radius:14px;padding:14px 18px;font-weight:600}
+.ab li small{display:block;color:var(--mut);font-weight:500;font-size:14px}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;perspective:1000px}
+.cs{background:#fff;color:#0a0a0a;border-radius:22px;padding:30px;position:relative;overflow:hidden;display:flex;flex-direction:column;gap:14px;transform:rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg));transition:transform .2s,box-shadow .3s}
+.cs:first-child{grid-column:1/-1}
+.cs::before{content:"";position:absolute;left:0;top:0;height:6px;width:100%;background:var(--r);transform:scaleX(.18);transform-origin:0 50%;transition:transform .5s cubic-bezier(.2,.8,.2,1)}
+.cs::after{content:"";position:absolute;inset:0;background:radial-gradient(320px circle at var(--mx,50%) var(--my,0%),rgba(225,6,0,.12),transparent 65%);opacity:0;transition:opacity .3s;pointer-events:none}
+.cs:hover{box-shadow:0 24px 60px rgba(225,6,0,.35)}.cs:hover::before{transform:scaleX(1)}.cs:hover::after{opacity:1}
+.tag{align-self:flex-start;background:var(--r);color:#fff;font-weight:700;font-size:13.5px;padding:4px 14px;border-radius:99px}
+.cs h3{font-size:clamp(24px,2.8vw,32px);font-weight:800;letter-spacing:-.01em}
+.cs dl{margin:0;display:grid;gap:12px}.cs dt{font-weight:800;font-size:14.5px;display:flex;align-items:center;gap:8px}.cs dt::before{content:"";width:9px;height:9px;background:var(--r);border-radius:2px}
+.cs dd{margin:2px 0 0;color:#2b2b2b;font-size:16px}
+.tg{display:flex;flex-wrap:wrap;gap:8px}.tg span{font-size:13.5px;font-weight:700;padding:4px 12px;border-radius:8px;background:#0a0a0a;color:#fff}
+.b{display:inline-flex;align-items:center;padding:13px 26px;border-radius:12px;font-weight:700;text-decoration:none;transition:transform .2s,background .2s,color .2s;border:2px solid transparent}
+.b:hover{transform:translateY(-3px)}
+.cs .b{margin-top:auto;align-self:flex-start;background:#0a0a0a;color:#fff}.cs .b:hover{background:var(--r)}
+.pr{display:grid;grid-template-columns:repeat(5,1fr);gap:18px}
+.pr div{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:24px 20px;transition:transform .3s,border-color .3s,box-shadow .3s}
+.pr div:hover{transform:translateY(-8px);border-color:var(--r);box-shadow:0 18px 40px rgba(225,6,0,.3)}
+.pr b{display:grid;place-items:center;width:44px;height:44px;border-radius:12px;background:var(--r);color:#fff;font:800 19px 'Syne',sans-serif;margin-bottom:16px}
+.pr h3{font-size:19px;margin-bottom:6px}.pr p{margin:0;color:var(--mut);font-size:14.5px}
+.sk{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px}
+.sk div{background:var(--card);border:1px solid var(--line);border-top:5px solid var(--r);border-radius:18px;padding:24px}
+.sk h3{font-size:18px;margin-bottom:14px}
+.sk span{display:inline-block;margin:0 6px 8px 0;padding:5px 13px;border-radius:9px;background:#262626;font-weight:600;font-size:14px;transition:transform .2s,background .2s}
+.sk span:hover{background:var(--r);transform:translateY(-3px) rotate(-2deg)}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:52px}
+.tl{list-style:none;margin:0;padding:0 0 0 26px;border-left:3px solid var(--line);display:grid;gap:26px}
+.tl li{position:relative}.tl li::before{content:"";position:absolute;left:-35px;top:7px;width:14px;height:14px;border-radius:50%;background:var(--r);box-shadow:0 0 0 5px rgba(225,6,0,.3)}
+.tl b{display:block;font-size:18px}.tl small{display:inline-block;background:var(--r);color:#fff;font-weight:700;font-size:12.5px;padding:2px 10px;border-radius:99px;margin-bottom:4px}.tl p{margin:4px 0 0;color:var(--mut);font-size:15.5px}
+.ct{background:var(--r);color:#fff;padding:100px 0;text-align:center;overflow:hidden}
+.ct h2{max-width:15ch;margin:0 auto 16px;font-size:clamp(36px,7vw,78px)}.ct h2::after{margin:14px auto 0;background:#fff}
+.ct p{margin:0 auto 32px;max-width:46ch;font-size:19px}
+.btns{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
+.ct .b.p{background:#fff;color:#0a0a0a}.ct .b.g{border-color:#fff;color:#fff}.ct .b.g:hover{background:rgba(0,0,0,.25)}
+footer{padding:28px 0 44px;text-align:center;color:var(--mut);font-size:14px}
+@media (pointer:fine){html.cc,html.cc *{cursor:none!important}}
+.cr,.cd{position:fixed;left:0;top:0;pointer-events:none;z-index:10000;border-radius:50%;opacity:0;transition:opacity .3s,width .25s,height .25s,margin .25s,background .25s,border-color .25s}
+.cd{width:8px;height:8px;margin:-4px 0 0 -4px;background:var(--r)}.cr{width:38px;height:38px;margin:-19px 0 0 -19px;border:2px solid var(--r)}
+body.cc-on .cr,body.cc-on .cd{opacity:1}.cr.hv{width:68px;height:68px;margin:-34px 0 0 -34px;background:rgba(225,6,0,.2)}.cr.dn{width:26px;height:26px;margin:-13px 0 0 -13px}
+.cd.lt{background:#fff}.cr.lt{border-color:#fff}
+.js .rv{opacity:0;transform:translateY(26px);transition:opacity .7s,transform .7s}.js .rv.in{opacity:1;transform:none}
+@media (max-width:860px){.ab,.two,.grid{grid-template-columns:1fr}.cs:first-child{grid-column:auto}.pr{grid-template-columns:1fr 1fr}nav a.l{display:none}.mq{transform:none;margin:0}}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}.js .rv{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<div id="pg"></div><canvas id="net" aria-hidden="true"></canvas><div class="cr" id="cr"></div><div class="cd" id="cd"></div>
+<nav><div class="w">
+<a class="lg" href="#top"><i>H</i>Mohamed Halith</a>
+<a class="l" href="#about">About</a><a class="l" href="#work">Case studies</a><a class="l" href="#skills">Skills</a><a class="l" href="#background">Background</a><a class="l" href="#contact">Contact</a>
+</div></nav>
+
+<header class="hero" id="top"><div class="gl" id="gl"></div>
+<div class="w"><h1 aria-label="Mohamed Halith"><span class="ln">Mohamed Halith</span></h1>
+<p class="ds">UI/UX designer and front-end builder</p></div>
+<div class="sc" aria-hidden="true"></div></header>
+
+<div class="mq" aria-hidden="true"><div id="mq"></div></div>
+
+<section id="about"><div class="w ab">
+<div class="rv"><h2>Designing clear, usable interfaces.</h2>
+<p>I’m a <b>UI/UX designer</b> who enjoys turning ideas into clean, user-friendly interfaces. I work in Figma and build my designs with HTML, CSS and JavaScript.</p>
+<p>With a B.Tech in <b>Artificial Intelligence &amp; Data Science</b>, I also work comfortably with developers and data teams, which helps me design for what can really be built.</p></div>
+<ul class="rv">
+<li>Open to UI/UX design roles<small>Available for internships and full-time positions</small></li>
+<li>UI/UX Design Intern<small>LeadPro Info Tech, using Figma</small></li>
+<li>Based in Dindigul, Tamil Nadu<small>Open to remote work</small></li>
+</ul>
+</div></section>
+
+<section id="work"><div class="w">
+<h2 class="rv">Case studies</h2>
+<p class="sub rv">Each project below starts with a real problem. Here is what I did and the skills I used.</p>
+<div class="grid" id="grid"></div>
+</div></section>
+
+<section id="skills"><div class="w">
+<h2 class="rv">Skills and tools</h2>
+<p class="sub rv">Design skills first, backed by the technical knowledge to build and hand off.</p>
+<div class="sk rv" id="sk"></div>
+</div></section>
+
+
+
+<section id="background"><div class="w two">
+<div class="rv"><h2>Experience</h2>
+<ul class="tl">
+<li><small>Internship</small><b>UI/UX Design Intern, LeadPro Info Tech</b><p>Learned the UI/UX process, layout planning and user-friendly interface design using Figma. Internship certificate received.</p></li>
+<li><small>Hackathon</small><b>Smart India Hackathon participant</b><p>Contributed to a team IoT solution for real-time tyre pressure monitoring of mining trucks.</p></li>
+</ul></div>
+<div class="rv"><h2>Education</h2>
+<ul class="tl">
+<li><small>University</small><b>B.Tech, Artificial Intelligence &amp; Data Science</b><p>PSNA College of Engineering and Technology</p></li>
+<li><small>School</small><b>Higher Secondary (12th)</b><p>Nehruji Memorial Municipal Higher Secondary School, Dindigul</p></li>
+<li><small>School</small><b>Secondary (10th)</b><p>M.S.P. Solai Nadar Memorial Higher Secondary School, Dindigul</p></li>
+</ul></div>
+</div></section>
+
+<section class="ct" id="contact"><div class="w">
+<h2 class="rv">Let’s work together</h2>
+<p class="rv">I’m looking for UI/UX design opportunities. Send me a message and I’ll reply soon.</p>
+<div class="btns rv"><a class="b p" href="mailto:halithbeen369@gmail.com">halithbeen369@gmail.com</a><a class="b g" href="https://www.linkedin.com/in/mohamed-halith-6a3479391" target="_blank" rel="noopener">LinkedIn</a><a class="b g" href="https://github.com/HalithUmar369" target="_blank" rel="noopener">GitHub</a></div>
+</div></section>
+<footer>Mohamed Halith. Dindigul, Tamil Nadu, India.</footer>
+
+<script>
+document.documentElement.classList.add('js');
+var $=function(s){return document.querySelector(s)},A=function(s){return document.querySelectorAll(s)};
+var GH='https://github.com/HalithUmar369',rm=matchMedia('(prefers-reduced-motion: reduce)').matches,fine=matchMedia('(pointer:fine)').matches;
+var P=[
+{t:'Smart Spare Key Customer Management',g:'Own project, web app',p:'A duplicate-key shop kept customer and vehicle records in notebooks, which made finding returning customers slow.',d:'Designed and built a web app that stores customer and vehicle details, proof uploads and key-cutting codes, with quick returning-customer lookup.',k:['HTML','CSS','JavaScript','Google Apps Script']},
+{t:'Manual Child Medicine Dispenser',g:'Academic design project',p:'Giving liquid medicine to children risks dosing errors and spillage.',d:'Designed a pump-based dispenser concept that delivers a measured 5 ml dose to reduce dosing errors and spillage.',k:['Concept design']},
+{t:'Smart Tyre Management System for Mining',g:'Smart India Hackathon, team',p:'Mining trucks need their tyre pressure monitored in real time.',d:'Contributed to a team IoT solution with TPMS sensors, ESP32, LoRa, alerts, TKPH analysis and a mobile app.',k:['ESP32','LoRa','TPMS sensors','Mobile app']},
+{t:'AI-Based Bovine Breed Classification',g:'Mini project, team',p:'Identifying Indian cattle and buffalo breeds by eye is hard.',d:'Built a tool where users upload a photo and get the breed across 41 classes and 5,926 images. YOLOv8 detects the animal, and we compared VGG16, EfficientNet and ConvNeXt Tiny.',k:['Python','YOLOv8','FastAPI','Streamlit']},
+{t:'News Article Classification System',g:'Machine learning, team',p:'Sorting news articles into categories by hand does not scale.',d:'Predicts whether an article is Business, Entertainment, Politics, Sport or Technology from the BBC News dataset, using text cleaning, TF-IDF and Naive Bayes.',k:['NLTK','TF-IDF','Naive Bayes']}];
+$('#grid').innerHTML=P.map(function(c,i){return '<article class="cs rv"><span class="tag">'+c.g+'</span><h3>'+c.t+'</h3><dl><div><dt>Problem</dt><dd>'+c.p+'</dd></div><div><dt>What I did</dt><dd>'+c.d+'</dd></div></dl><div class="tg">'+c.k.map(function(x){return '<span>'+x+'</span>'}).join('')+'</div><a class="b" href="'+GH+'" target="_blank" rel="noopener">View on GitHub</a></article>'}).join('');
+var S=[['Design',['Figma','Canva','Wireframing','Prototyping','UI Design']],['Front-end',['HTML','CSS','JavaScript','Google Apps Script']],['AI and ML',['Python','PyTorch','TensorFlow','YOLOv8','scikit-learn','OpenCV']],['Data and backend',['Pandas','NumPy','NLTK','FastAPI','Streamlit']],['IoT',['ESP32','LoRa','TPMS sensors']],['Tools',['VS Code','DaVinci Resolve']]];
+$('#sk').innerHTML=S.map(function(s){return '<div><h3>'+s[0]+'</h3>'+s[1].map(function(x){return '<span>'+x+'</span>'}).join('')+'</div>'}).join('');
+var m=['Figma','Wireframing','Prototyping','UI Design','User-friendly UI','HTML &amp; CSS','JavaScript'].map(function(x){return '<span>'+x+'</span>'}).join('');$('#mq').innerHTML=m+m+m+m;
+var k=0;A('h1 .ln').forEach(function(l){var t=l.textContent;l.textContent='';t.split('').forEach(function(c){var s=document.createElement('span');s.className='ch';s.style.setProperty('--k',k++);s.textContent=c===' '?'\u00a0':c;l.appendChild(s)})});
+var h1=$('h1'),ln1=$('h1 .ln');function fit(){h1.style.fontSize='100px';var s=Math.min(100*ln1.clientWidth/Math.max(1,ln1.scrollWidth)*.98,96);h1.style.fontSize=s+'px'}
+fit();addEventListener('resize',fit);if(document.fonts&&document.fonts.ready)document.fonts.ready.then(fit);
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});
+A('.rv').forEach(function(el,i){el.style.transitionDelay=el.classList.contains('cs')?((i%2)*90)+'ms':'0ms';io.observe(el)});
+var links=A('nav a.l'),sio=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting)links.forEach(function(l){l.classList.toggle('on',l.getAttribute('href')==='#'+e.target.id)})})},{rootMargin:'-45% 0px -50% 0px'});
+A('section').forEach(function(s){sio.observe(s)});
+var cv=$('#net'),cx=cv.getContext('2d'),W,H,pts=[],mx=-999,my=-999;
+function rs(){var d=Math.min(devicePixelRatio||1,2);W=innerWidth;H=innerHeight;cv.width=W*d;cv.height=H*d;cx.setTransform(d,0,0,d,0,0);var n=Math.min(95,Math.floor(W*H/15000));pts=[];for(var i=0;i<n;i++)pts.push({x:Math.random()*W,y:Math.random()*H,vx:(Math.random()-.5)*.4,vy:(Math.random()-.5)*.4,z:Math.random()*.35+.08,r:Math.random()*1.8+1,red:Math.random()<.3})}
+function draw(){cx.clearRect(0,0,W,H);var sy=scrollY,i,j,a,b,dx,dy,dd;
+for(i=0;i<pts.length;i++){a=pts[i];if(!rm){a.x+=a.vx;a.y+=a.vy}a.x=(a.x+W)%W;a.y=(a.y+H)%H;a.py=(((a.y-sy*a.z)%H)+H)%H;dx=a.x-mx;dy=a.py-my;dd=Math.sqrt(dx*dx+dy*dy);if(dd<130&&dd>0){a.x+=dx/dd*1.6;a.y+=dy/dd*1.6}}
+for(i=0;i<pts.length;i++){a=pts[i];for(j=i+1;j<pts.length;j++){b=pts[j];dx=a.x-b.x;dy=a.py-b.py;dd=Math.sqrt(dx*dx+dy*dy);if(dd<135){var al=(1-dd/135)*.4;cx.strokeStyle=(a.red||b.red)?'rgba(225,6,0,'+al*1.6+')':'rgba(255,255,255,'+al*.55+')';cx.lineWidth=1;cx.beginPath();cx.moveTo(a.x,a.py);cx.lineTo(b.x,b.py);cx.stroke()}}
+dx=a.x-mx;dy=a.py-my;dd=Math.sqrt(dx*dx+dy*dy);if(dd<170){cx.strokeStyle='rgba(225,6,0,'+(1-dd/170)*.9+')';cx.lineWidth=1.2;cx.beginPath();cx.moveTo(a.x,a.py);cx.lineTo(mx,my);cx.stroke()}
+cx.fillStyle=a.red?'#e10600':'rgba(255,255,255,.75)';cx.beginPath();cx.arc(a.x,a.py,a.r,0,6.283);cx.fill()}}
+rs();addEventListener('resize',rs);addEventListener('pointermove',function(e){mx=e.clientX;my=e.clientY},{passive:true});
+var pg=$('#pg'),vel=0,last=scrollY,mqa=$('#mq');
+(function loop(){draw();var sy=scrollY,h=document.documentElement;pg.style.transform='scaleX('+(sy/Math.max(1,h.scrollHeight-innerHeight))+')';vel+=(Math.abs(sy-last)-vel)*.12;last=sy;
+if(!rm&&mqa.getAnimations){var an=mqa.getAnimations()[0];if(an)an.playbackRate=1+Math.min(vel/4,8)}requestAnimationFrame(loop)})();
+var hero=$('.hero'),gl=$('#gl');hero.addEventListener('pointermove',function(e){var r=hero.getBoundingClientRect();gl.style.setProperty('--gx',(e.clientX-r.left)+'px');gl.style.setProperty('--gy',(e.clientY-r.top)+'px')});
+if(fine&&!rm){document.documentElement.classList.add('cc');var cr=$('#cr'),cd=$('#cd'),x=0,y=0,rx=0,ry=0,on=0;
+addEventListener('pointermove',function(e){x=e.clientX;y=e.clientY;if(!on){on=1;rx=x;ry=y;document.body.classList.add('cc-on')}var t=e.target;cr.classList.toggle('hv',!!(t.closest&&t.closest('a,button,.cs')));var lt=!!(t.closest&&t.closest('.ct'));cr.classList.toggle('lt',lt);cd.classList.toggle('lt',lt)},{passive:true});
+document.addEventListener('mouseleave',function(){document.body.classList.remove('cc-on');on=0});
+addEventListener('pointerdown',function(){cr.classList.add('dn')});addEventListener('pointerup',function(){cr.classList.remove('dn')});
+(function f(){rx+=(x-rx)*.18;ry+=(y-ry)*.18;cr.style.transform='translate3d('+rx+'px,'+ry+'px,0)';cd.style.transform='translate3d('+x+'px,'+y+'px,0)';requestAnimationFrame(f)})()}
+A('.b').forEach(function(b){b.addEventListener('pointermove',function(e){var r=b.getBoundingClientRect();b.style.translate=((e.clientX-r.left-r.width/2)*.2)+'px '+((e.clientY-r.top-r.height/2)*.3)+'px'});b.addEventListener('pointerleave',function(){b.style.translate=''})});
+A('.cs').forEach(function(p){p.addEventListener('pointermove',function(e){var r=p.getBoundingClientRect(),px=(e.clientX-r.left)/r.width,py=(e.clientY-r.top)/r.height;p.style.setProperty('--ry',((px-.5)*5)+'deg');p.style.setProperty('--rx',((.5-py)*5)+'deg');p.style.setProperty('--mx',px*100+'%');p.style.setProperty('--my',py*100+'%')});p.addEventListener('pointerleave',function(){p.style.setProperty('--rx','0deg');p.style.setProperty('--ry','0deg')})});
+</script>
+</body>
+</html>
