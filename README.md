@@ -2,7 +2,7 @@
 
 Personal portfolio website of **Mohamed Halith**, a UI/UX designer and front-end builder studying B.Tech Artificial Intelligence & Data Science.
 
-**Live site:** https://halithumar369.github.io
+**Live site:** https://halithumar369.github.io/Portfolio/
 
 ## About
 
@@ -44,16 +44,16 @@ This portfolio presents my UI/UX design work, projects and skills for design rol
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/HalithUmar369/HalithUmar369.github.io.git
+   git clone https://github.com/HalithUmar369/Portfolio.git
    ```
 2. Open the folder and double-click `index.html` to view it in your browser.
 
 ## Deploy with GitHub Pages
 
-1. Name the repository `HalithUmar369.github.io` and make it public.
+1. Create a public repository named `Portfolio`.
 2. Upload `index.html` to the `main` branch.
 3. Go to **Settings > Pages**, choose **Deploy from a branch**, select `main` and `/ (root)`, then save.
-4. Your site will be live at `https://halithumar369.github.io` after a minute or two.
+4. Your site will be live at `https://halithumar369.github.io/Portfolio/` after a minute or two.
 
 ## Customize
 
